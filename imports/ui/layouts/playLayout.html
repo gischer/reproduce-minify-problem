@@ -1,0 +1,10 @@
+<template name="PlayLayout">
+  <header>
+    {{#if mayMod user}}
+      {{>DevBar}}
+    {{/if}}
+  </header>
+  <body>
+    {{>yield}}
+  </body>
+</template>

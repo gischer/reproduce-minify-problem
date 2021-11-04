@@ -1,0 +1,61 @@
+<template name="Home">
+  <div class='container-fluid'>
+    <h1>Secrets of Toanium</h1>
+
+    {{#if userTesting }}
+      {{>SetUser}}
+    {{/if}}
+    {{#if dataReady }}
+      <div class='row'>
+        <p>
+        Hi, {{preferredHandle}}!  You can look at users <a href="/players">here</a>,
+        and here are the <a href="/releaseNotes">release notes</a>.
+        </p>
+      </div>
+
+      <div class="row">
+        <h3>Your Characters</h3>
+      </div>
+      <div class='row'>
+        <ul class='list-group'>
+          {{#each character in characters}}
+            {{>CharacterItem character=character}}
+          {{/each}}
+          <li class='list-group-item'><a href='/createCharacter'>Create a New Character</a></li>
+        </ul>
+      </div>
+      {{#if mayStartInstance user }}
+        <div class='row'>
+          <h3>Instances You Own</h3>
+        </div>
+        <div class='row'>
+          <ul class='list-group'>
+            <li class='list-group-item'>Create an instance from
+              <div class='form-group form-inline'>
+                <select class='form-control mr-2' id='player-create-instance-select'>
+                  {{{options_for_instance_creation}}}
+                </select>
+                <label class='form-control' for='player-create-instance-name'>Named:</label>
+                <input type='text' class='form-control mr-2' id='player-create-instance-name' maxlength=20 placeholder={{suggested_name}}>
+                <button class='btn btn-primary' id='player-create-instance'>Create Instance</button>
+              </div>
+            </li>
+            {{#each instance in ownedInstances}}
+              <li class='list-group-item'><a class='ready-link' href='#' data-instance-id={{instance._id}}>{{instance.name}}</a> from <i>{{levelName instance}}</i><span class='fa fa-times float-right delete-instance' data-instance-id={{instance._id}}></span></li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      <div class='row'>
+        <h3>Instances You Are Invited To</h3>
+      </div>
+      <div class='row'>
+        <ul class='list-group'>
+          {{#each instance in instances}}
+            <li class='list-group-item'><a class='ready-link' href='#' data-instance-id={{instance._id}}>{{instance.name}}</a> from <i>{{levelName instance}}</i></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  </div>
+</template>

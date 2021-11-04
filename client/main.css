@@ -1,0 +1,69 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.card-title-input {
+  background-color: gray;
+  color: white;
+}
+
+.interactBtn {
+  cursor: pointer;
+}
+
+.tileAdjRow {
+  width: 50%;
+}
+
+.tileAdjWConf {
+  width: 57.5%;
+}
+
+#deckConfirmBtn {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+  .card-canvas {
+    position: fixed;
+  }
+}
+
+.lower-canvas {
+  top: 95px;
+}
+
+.secBar {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  top: 0px;
+}
+
+.tilePrev {
+  width: 50px;
+  height: 50px;
+}
+
+.bodyColor {
+  color: red;
+}
+
+.mindColor {
+  color: green;
+}
+
+.willColor {
+  color: blue;
+}
+
+.edit-menu {
+  overflow: scroll;
+  max-height: 1023px;
+}
+
+.tileSidebar {
+  height: 300px;
+  overflow: scroll;
+}
