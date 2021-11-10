@@ -7,5 +7,5 @@ To reproduce the failure, perform the following steps:
 3. Navigate to the top-level directory of the repository
 4. Type `meteor build ../output`
 
-This project does not run.  Typing `meteor run` (or just `meteor`) will result
-in errors.  If running it is necessary, let me know.
+This project will run now if you type `meteor`.  However, it does nothing
+of much value beyond reproducing the build error above.
